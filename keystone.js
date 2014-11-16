@@ -24,8 +24,11 @@ keystone.init({
 	
 	'auto update': true,
 	'session': true,
+    'session store': 'mongo',
 	'auth': true,
 	'user model': 'User',
+    'signin url': '/signin',
+    'signout url': '/signout',
 	'cookie secret': '_$=0iBX8@.y")LKaD7zMZr2!xdTEy}WJ`WcVEiKqz=%45eIFK`dI-iNmi+=mXbBz'
 
 });
