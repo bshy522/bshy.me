@@ -85,23 +85,25 @@ html
 
             //- The content block should contain the body of your template's content
             .row
-                .col-sm-9.col-sm-offset-3
+                .main.col-sm-9.col-sm-offset-3
                     .container-fluid
                         //- The Intro block appears above flash messages (used for temporary information display)
                         block intro
                         block content
 
             .col-sm-3.left-side
-                .list-group
-                    a.list-group-item(href="#") active Cras justo odio
-                    a.list-group-item(href="#") Dapibus ac facilisis in
-                    a.list-group-item(href="#") Morbi leo risus
-                    a.list-group-item(href="#") Porta ac consectetur ac
-                    a.list-group-item(href="#") Vestibulum at eros
+                ul
+                    li 潮汐(bshy)
+                    li 
+                        span NodeJS工程师(
+                        a(target='_blank',href='http://www.yunshipei.com') 云适配
+                        span )
+                    li 前端技术爱好者
+                    li 轮滑爱好者
 
 
         //- FOOTER
-        #footer.clearfix.container
+        #footer.container
 
             //- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
             p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
@@ -129,8 +131,7 @@ html
         script.
             !function($, window, document, undefined) {
                 $('.left-side').stick_in_parent({
-                    parent: '#body',
-                    offset_top: 50
+                    parent: '#body'
                 });
             }(jQuery, window, document, undefined);
 
