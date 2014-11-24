@@ -24,7 +24,8 @@ mixin post(post)
 
 block intro
 	div
-		h1= data.category ? data.category.name : 'Blog'
+		if data.category
+			h1= data.category.name
 
 block content
 	.container-fluid: .row
