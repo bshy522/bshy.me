@@ -11,6 +11,8 @@
  * can be previewed at /keystone/test-email/{key}
  */
 
+'use strict';
+
 var keystone = require('keystone');
 
 module.exports = {

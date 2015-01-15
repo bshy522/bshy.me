@@ -14,13 +14,13 @@ keystone.init({
     'name': 'bshy.me',
     'brand': 'bshy.me',
 
-    'less': 'public',
+    // 'less': 'public',
     'static': 'public',
     'favicon': 'public/favicon.ico',
-    'views': 'templates/views',
+    'views': 'app/views',
     'view engine': 'jade',
 
-    'emails': 'templates/emails',
+    'emails': 'app/views/emails',
 
     'auto update': true,
     'session': true,
@@ -29,24 +29,12 @@ keystone.init({
     'user model': 'User',
     'signin url': '/signin',
     'signout url': '/signout',
-    'cookie secret': '_$=0iBX8@.y")LKaD7zMZr2!xdTEy}WJ`WcVEiKqz=%45eIFK`dI-iNmi+=mXbBz',
-
-    'cloudinary config': {
-        cloud_name: 'de2mevtdi',
-        api_key: '589671947932947',
-        api_secret: '7sJP5uI4wDQhG-z5DANAxGtMRSY'
-    },
-
-    // optional, will prefix all built-in tags with 'keystone_'
-    'cloudinary prefix': 'bshy.me_',
-
-    // optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
-    'cloudinary folders': true
+    'cookie secret': '_$=0iBX8@.y")LKaD7zMZr2!xdTEy}WJ`WcVEiKqz=%45eIFK`dI-iNmi+=mXbBz'
 });
 
 // Load your project's Models
 
-keystone.import('models');
+keystone.import('app/models');
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
@@ -89,10 +77,10 @@ keystone.set('email locals', {
 
 keystone.set('email rules', [{
     find: '/images/',
-    replace: (keystone.get('env') == 'production') ? 'http://www.your-server.com/images/' : 'http://localhost:3000/images/'
+    replace: (keystone.get('env') === 'production') ? 'http://www.your-server.com/images/' : 'http://localhost:3000/images/'
 }, {
     find: '/keystone/',
-    replace: (keystone.get('env') == 'production') ? 'http://www.your-server.com/keystone/' : 'http://localhost:3000/keystone/'
+    replace: (keystone.get('env') === 'production') ? 'http://www.your-server.com/keystone/' : 'http://localhost:3000/keystone/'
 }]);
 
 // Load your project's email test routes
