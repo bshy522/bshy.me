@@ -6,6 +6,7 @@
  */
 'use strict';
 
+var path = require('path');
 var webpack = require('gulp-webpack').webpack;
 var config = require('./config');
 
