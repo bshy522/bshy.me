@@ -5,21 +5,24 @@
  * the subfolder /webpack-dev-server/ is visited. Visiting the root will not automatically reload.
  */
 'use strict';
+
 var webpack = require('gulp-webpack').webpack;
+var config = require('./config');
 
 module.exports = {
     progress: true,
     verbose: true,
     output: {
         filename: 'app.js',
-        publicPath: '/public/dist'
+        publicPath: config.dest,
+        path: path.join(process.cwd(), config.dest)
     },
 
     cache: true,
-    debug: true,
+    // debug: true,
     devtool: true,
     entry: [
-        './app/assets/app.jsx'
+        config.jsx.entry
     ],
 
     stats: {
@@ -37,17 +40,8 @@ module.exports = {
             loader: 'jshint'
         }],
         loaders: [{
-            test: /\.jsx$/,
+            test: /\.jsx$/i,
             loader: 'react-hot!jsx-loader?harmony'
-        }, {
-            test: /\.less/,
-            loader: 'style-loader!css-loader!less-loader'
-        }, {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader'
-        }, {
-            test: /\.(png|jpg)$/,
-            loader: 'url-loader?limit=8192'
         }]
     },
 

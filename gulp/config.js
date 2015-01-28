@@ -3,8 +3,9 @@ var dest = './public/dist',
     mui = './node_modules/material-ui/src';
 
 module.exports = {
+    dest: dest,
     jsx: {
-        src: src + '/app.jsx',
+        entry: src + '/app.jsx',
         watch: [
             src + '/**/*.jsx'
         ]
