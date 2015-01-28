@@ -1,7 +1,6 @@
 'use strict';
 
-var keystone = require('keystone'),
-	Enquiry = keystone.list('Enquiry');
+var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
 	
@@ -17,10 +16,7 @@ exports = module.exports = function(req, res) {
 	
 	// On POST requests, add the Enquiry item to the database
 	view.on('post', { action: 'about' }, function(next) {
-		
-		var newEnquiry = new Enquiry.model(),
-			updater = newEnquiry.getUpdateHandler(req);
-		
+
 		updater.process(req.body, {
 			flashErrors: true,
 			fields: 'name, email, phone, enquiryType, message',

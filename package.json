@@ -10,26 +10,32 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
+    "del": "^1.1.1",
     "gulp": "^3.8.10",
-    "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.4.3",
-    "gulp-duojs": "^0.3.0",
+    "gulp-autoprefixer": "^2.1.0",
     "gulp-jshint": "^1.9.0",
     "gulp-less": "^2.0.1",
-    "gulp-minify-css": "^0.3.12",
     "gulp-nodemon": "^1.0.5",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.0.2",
+    "gulp-notify": "^2.1.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-util": "^3.0.1",
     "gulp-watch": "^3.0.0",
+    "gulp-webpack": "^1.1.2",
     "jshint-stylish": "^1.0.0",
-    "open": "0.0.5"
+    "jsx-loader": "^0.12.2",
+    "material-ui": "^0.5.0",
+    "react": "^0.12.2",
+    "react-hot-loader": "^1.1.1",
+    "reactify": "^0.17.1",
+    "require-dir": "^0.1.0"
   },
   "engines": {
     "node": ">=0.10.22",
     "npm": ">=1.3.14"
   },
   "scripts": {
-    "start": "node keystone.js"
+    "start": "node keystone.js",
+    "serve": "./node_modules/gulp/bin/gulp.js serve"
   },
   "main": "keystone.js"
 }

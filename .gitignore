@@ -30,6 +30,6 @@ node_modules
 # Ignore .DS_Store files on OS X
 .DS_Store
 
-components
+/components/
 public/dist/
 tmp/

@@ -16,7 +16,7 @@ html
         //- All .less files will be automatically compiled and minified in production.
         //- link(href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css", rel="stylesheet")
         link(href="http://fonts.useso.com/css?family=Josefin+Sans", rel="stylesheet")
-        link(href="/styles/site.min.css", rel="stylesheet")
+        link(href="/dist/app.css", rel="stylesheet")
 
         //- This file provides the default styling for the KeystoneJS Content Editor
         if user && user.canAccessKeystone
@@ -43,8 +43,7 @@ html
         //- HEADER
         #header.container
 
-            #intro.
-                Bshy's Blog
+            #intro Bshy's Blog
 
             //- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
             //- ... or completely change this header to suit your design.
@@ -92,25 +91,29 @@ html
                         block content
 
             .col-sm-3.left-side
-                ul
+                ul.my-tags
                     li 潮汐(bshy)
-                    li 
-                        span NodeJS工程师(
-                        a(target='_blank',href='http://www.yunshipei.com') 云适配
-                        span )
+                    li
+                        | NodeJS工程师(
+                        a(target='_blank',href='http://www.yunshipei.com') @云适配
+                        | )
                     li 前端技术爱好者
-                    li 轮滑爱好者
+                    li 轮滑er
+                ul.in-community
+                    li: span xxx
 
 
         //- FOOTER
         #footer.container
 
             //- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-            p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+            p
+                | Powered by
+                a(href="http://keystonejs.com",target="_blank") KeystoneJS
 
 
         //- JAVASCRIPT
-        script(src='/dist/index.js')
+        script(src='/dist/app.js')
 
         //- The KeystoneJS Content Editor provides support for ks-editable data attributes,
         //- which generate links to edit content for users who can access Keystone
@@ -125,6 +128,10 @@ html
                     parent: '#body'
                 });
             }(jQuery, window, document, undefined);
-
+        script.
+            // GA
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-57138030-1', 'auto');
+            ga('send', 'pageview');
         //- Include template-specific javascript files by extending the js block
         block js

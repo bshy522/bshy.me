@@ -2,7 +2,7 @@ extends ./layouts/bshy.me
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/blog/post/' + post.slug)= post.title
+		h2: a(href='/post/' + post.slug)= post.title
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
@@ -16,15 +16,16 @@ mixin post(post)
 						|  
 			if post.author
 				| by #{post.author.name.first}
-		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
+		//- if post.image.exists
+		//- 	img(src=post._.image.fit(160,160)).img.pull-right
 		p!= post.content.brief
 		if post.content.extended
-			p.read-more: a(href='/blog/post/' + post.slug) Read more...
+			p.read-more: a(href='/post/' + post.slug) Read more...
 
 block intro
 	div
-		h1= data.category ? data.category.name : 'Blog'
+		if data.category
+			h1= data.category.name
 
 block content
 	.container-fluid: .row

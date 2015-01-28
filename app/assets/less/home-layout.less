@@ -1,0 +1,25 @@
+.hsby-home-layout {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-flow: row no-wrap;
+    .left-sider {
+        flex: .2;
+        height: 100%;
+        .photo {
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            img {
+                width: 200px;
+            }
+        }
+    }
+    .main {
+        height: 100%;
+        flex: .8;
+    }
+}
