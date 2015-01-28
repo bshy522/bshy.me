@@ -7,7 +7,7 @@
     "connect-mongo": "^0.4.1",
     "dotenv": "0.4.0",
     "keystone": "~0.2.32",
-    "lodash": "^2.4.1"
+    "underscore": "~1.7.0"
   },
   "devDependencies": {
     "grunt": "~0.4.4",

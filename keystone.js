@@ -38,7 +38,7 @@ keystone.init({
     },
 
     // optional, will prefix all built-in tags with 'keystone_'
-    'cloudinary prefix': 'bshy.me',
+    'cloudinary prefix': 'bshy.me_',
 
     // optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
     'cloudinary folders': true
