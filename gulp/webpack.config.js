@@ -20,8 +20,10 @@ module.exports = {
     },
 
     cache: true,
-    // debug: true,
-    devtool: true,
+    watch: true,
+    debug: true,
+    keepalive: true,
+    devtool: 'source-map',
     entry: [
         config.jsx.entry
     ],
@@ -32,11 +34,11 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.jsx']
     },
     module: {
         preLoaders: [{
-            test: '\\.js$',
+            test: '\\.js',
             exclude: 'node_modules',
             loader: 'jshint'
         }],

@@ -10,8 +10,11 @@ var webpack = require('gulp-webpack').webpack;
 var lodash = require('lodash');
 
 var config = {
+    cache: true,
+    watch: true,
     debug: false,
-    devtool: false,
+    keepalive: true,
+    devtool: 'source-map',
 
     stats: {
         colors: true,
